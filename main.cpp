@@ -2,6 +2,8 @@
 #include <string>
 #include <stdlib.h>
 #include <stack>
+#include <map>
+#include <vector>
 
 using namespace std;
 
@@ -45,30 +47,47 @@ int main() {
 
     stack <char> stack1;
     stack <char> stack2;
+    map <char, int> mapita;
+    mapita.insert(pair <char, int> ('-', 1));
+    mapita.insert(pair <char, int> ('+', 1));
+    mapita.insert(pair <char, int> ('*', 2));
+    mapita.insert(pair <char, int> ('/', 2));
+    mapita.insert(pair <char, int> ('(', 4));
+    mapita.insert(pair <char, int> (')', 4));
+
+    vector <string> vector2;
+    int counter = 0;
+    string valorcito = "";
+
+
+
+
 
     for(auto c : formula){
         if(c == '+' || c == '-' || c == '*' || c == '/' || c == '(' || c == ')') {
-            if(c == '*' || c == '/'){
 
-                while(stack1.top() == '+' || stack1.top() == '-'){
-                    formula2  += stack1.top();
+                while(!stack1.empty() && (mapita[c]>= mapita[stack1.top()])){
+                    valorcito += stack1.top();
+                    vector2.push_back(valorcito);
+                    valorcito = "";
                     stack1.pop();
                 }
 
-            }
-
             stack1.push(c);
 
-            c = 0;
+            c = ' ';
         }else{
-            formula2 += c;
+            valorcito += c;
+            vector2.push_back(valorcito);
+            valorcito = "";
         }
 
-
-
+        counter++;
     }
 
-    cout<<formula;
+    for(auto d : vector2){
+        cout << d;
+    }
 
 
     return 0;
