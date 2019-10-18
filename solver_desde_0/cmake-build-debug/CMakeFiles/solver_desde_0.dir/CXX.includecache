@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/HP/CLionProjects/solver_desde_0/main.cpp
+iostream
+-
+vector
+-
+stack
+-
+map
+-
+string
+-
+tree.h
+C:/Users/HP/CLionProjects/solver_desde_0/tree.h
+
+C:/Users/HP/CLionProjects/solver_desde_0/node.h
+iostream
+-
+string
+-
+cmath
+-
+
+C:/Users/HP/CLionProjects/solver_desde_0/tree.h
+node.h
+C:/Users/HP/CLionProjects/solver_desde_0/node.h
+
